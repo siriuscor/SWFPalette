@@ -1,5 +1,10 @@
-package com.talentwalker.palette
+package 
 {
+    import com.bit101.components.*;
+    import com.talentwalker.palette.BitArray;
+    import com.talentwalker.palette.PaletteBuilder;
+    import com.talentwalker.palette.PaletteChanger;
+    import com.talentwalker.palette.SwfUncompresser;
     import com.talentwalker.palette.alloctaor.*;
     import com.talentwalker.palette.colouriser.*;
     import com.talentwalker.palette.colouriser.defineobject.*;
@@ -11,20 +16,23 @@ package com.talentwalker.palette
     import flash.net.*;
     import flash.system.*;
     import flash.utils.*;
-    import com.talentwalker.palette.PaletteBuilder;
-    import com.talentwalker.palette.PaletteChanger;
-    import com.talentwalker.palette.SwfUncompresser;
-    import com.talentwalker.palette.BitArray;
-    
     public class PaletteSample extends Sprite
     {
         public var bytes:BitArray;
         public function PaletteSample()
         {
+			buildUI();
+			return;
             bytes = new BitArray();
             load("m_bear.swf");
         }
         
+        public function buildUI():void {
+            
+            var comp = new com.bit101.components.ColorChooser();
+            addChild(comp);
+        }
+		
         public function load(url:String){ 
             var loader:URLLoader = loader;
             var request:URLRequest = new URLRequest(url);

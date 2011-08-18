@@ -1,14 +1,11 @@
 ﻿//Created by Action Script Viewer - http://www.buraks.com/asv
 package com.talentwalker.palette.colouriser {
-    import com.talentwalker.palette.logging.*;
     import com.talentwalker.palette.alloctaor.*;
     
-    import org.spicefactory.lib.logging.*;
     import com.talentwalker.palette.BitArray;
 
     public class RGBColor implements Resettable {
 
-        private static var log:ILogger = com.talentwalker.palette.logging.LogUtil.getLogger();
         public static var WHITE:RGBColor = RGBColor.fromComponents(0xFF, 0xFF, 0xFF, -1);
         public static var BLACK:RGBColor = RGBColor.fromComponents(0, 0, 0, -1);
 
