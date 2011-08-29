@@ -1,7 +1,5 @@
 ﻿//Created by Action Script Viewer - http://www.buraks.com/asv
 package com.talentwalker.palette.logging {
-    import org.spicefactory.lib.logging.*;
-    import org.spicefactory.lib.logging.impl.*;
 
     public class LogUtil {
 
@@ -17,9 +15,7 @@ package com.talentwalker.palette.logging {
             return (false);
         }
         public static function getLogger():ILogger{
-//            var _local1 = "com.moshimonsters";
-//            return (LogContext.getLogger(_local1));
-            return new DefaultLogger("test",null);
+            return new SimpleLogger();
         }
         public static function init(_arg1:Object=null, _arg2:String=null):void{
             if (_INSTANCE == null){
@@ -41,4 +37,4 @@ package com.talentwalker.palette.logging {
 //        }
 
     }
-}//package com.mindcandy.diablo.utils.logging 
+}

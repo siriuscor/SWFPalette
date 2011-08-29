@@ -29,4 +29,4 @@ package com.talentwalker.palette.colouriser.record {
         }
 
     }
-}//package com.mindcandy.utils.colouriser.record 
+}

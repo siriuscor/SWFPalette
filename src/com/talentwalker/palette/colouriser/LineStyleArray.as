@@ -32,4 +32,4 @@ package com.talentwalker.palette.colouriser {
         }
 
     }
-}//package com.mindcandy.utils.colouriser 
+}

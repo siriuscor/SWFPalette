@@ -2,7 +2,7 @@
 package com.talentwalker.palette.colouriser.defineobject {
     import com.talentwalker.palette.colouriser.*;
     import com.talentwalker.palette.alloctaor.*;
-    import org.spicefactory.lib.logging.*;
+//    import org.spicefactory.lib.logging.*;
     import com.talentwalker.palette.logging.*;
     import com.talentwalker.palette.BitArray;
 
@@ -34,4 +34,4 @@ package com.talentwalker.palette.colouriser.defineobject {
         }
 
     }
-}//package com.mindcandy.utils.colouriser.defineobject 
+}

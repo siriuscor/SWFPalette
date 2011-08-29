@@ -2,7 +2,6 @@
 package com.talentwalker.palette.colouriser.record {
     import com.talentwalker.palette.colouriser.*;
     import com.talentwalker.palette.alloctaor.*;
-    import org.spicefactory.lib.logging.*;
     import com.talentwalker.palette.colouriser.defineobject.*;
     import com.talentwalker.palette.logging.*;
     import com.talentwalker.palette.colouriser.fillstyle.*;
@@ -160,4 +159,4 @@ package com.talentwalker.palette.colouriser.record {
         }
 
     }
-}//package com.mindcandy.utils.colouriser.record 
+}

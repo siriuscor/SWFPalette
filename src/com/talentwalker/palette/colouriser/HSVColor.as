@@ -1,6 +1,6 @@
 ﻿//Created by Action Script Viewer - http://www.buraks.com/asv
 package com.talentwalker.palette.colouriser {
-    import org.spicefactory.lib.logging.*;
+//    import org.spicefactory.lib.logging.*;
     import com.talentwalker.palette.logging.*;
 
     public class HSVColor {
@@ -114,4 +114,4 @@ package com.talentwalker.palette.colouriser {
         }
 
     }
-}//package com.mindcandy.utils.colouriser 
+}

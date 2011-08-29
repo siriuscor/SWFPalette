@@ -12,4 +12,4 @@ package com.talentwalker.palette.colouriser {
             bytes.alignToByte();
         }
     }
-}//package com.mindcandy.utils.colouriser 
+}

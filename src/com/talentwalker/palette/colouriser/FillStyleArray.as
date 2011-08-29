@@ -1,7 +1,6 @@
 ﻿//Created by Action Script Viewer - http://www.buraks.com/asv
 package com.talentwalker.palette.colouriser {
     import com.talentwalker.palette.alloctaor.*;
-    import org.spicefactory.lib.logging.*;
     import com.talentwalker.palette.colouriser.defineobject.*;
     import com.talentwalker.palette.logging.*;
     import com.talentwalker.palette.colouriser.fillstyle.*;
@@ -62,4 +61,4 @@ package com.talentwalker.palette.colouriser {
         }
 
     }
-}//package com.mindcandy.utils.colouriser 
+}

@@ -13,4 +13,4 @@ package com.talentwalker.palette.colouriser.line {
         }
 
     }
-}//package com.mindcandy.utils.colouriser.line 
+}

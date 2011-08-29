@@ -1,14 +1,8 @@
 ﻿//Created by Action Script Viewer - http://www.buraks.com/asv
 package com.talentwalker.palette.alloctaor {
-    import com.talentwalker.palette.logging.LogUtil;
+    import com.talentwalker.palette.logging.*;
     
     import flash.utils.*;
-    
-    import org.spicefactory.lib.logging.ILogger;
-
-//    import org.spicefactory.lib.logging.ILogger;
-//    import com.mindcandy.diablo.utils.logging.*;
-//    import com.mindcandy.diablo.utils.logging.LogUtil;
     
     public class Allocator {
 
@@ -34,4 +28,4 @@ package com.talentwalker.palette.alloctaor {
         }
 
     }
-}//package com.mindcandy.utils.alloctaor 
+}

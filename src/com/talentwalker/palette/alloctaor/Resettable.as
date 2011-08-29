@@ -8,4 +8,4 @@ package com.talentwalker.palette.alloctaor {
         function read(_arg1:BitArray=null, _arg2:ParseState=null):void;
 
     }
-}//package com.mindcandy.utils.alloctaor 
+} 

@@ -5,10 +5,6 @@ package
     import com.talentwalker.palette.PaletteBuilder;
     import com.talentwalker.palette.PaletteChanger;
     import com.talentwalker.palette.SwfUncompresser;
-    import com.talentwalker.palette.alloctaor.*;
-    import com.talentwalker.palette.colouriser.*;
-    import com.talentwalker.palette.colouriser.defineobject.*;
-    import com.talentwalker.palette.colouriser.line.*;
     
     import flash.display.Loader;
     import flash.display.Sprite;
@@ -18,19 +14,60 @@ package
     import flash.utils.*;
     public class PaletteSample extends Sprite
     {
-        public var bytes:BitArray;
+        private var bytes:BitArray;
+        
+        private var canvas:Panel;
+        private var colorList:VBox;
+        
+        private var paletteData:Object;
+        private var colors:Array;
+        private var canvasLoader:Loader;
         public function PaletteSample()
         {
+            canvasLoader = new Loader();
 			buildUI();
-			return;
+        }
+        
+        public function buildUI():void {
+            colorList = new VBox(this,0,0);
+            canvas = new Panel(this,100,0);
+            canvas.width = 400;
+            canvas.height = 300;
+            canvas.addChild(canvasLoader);
             bytes = new BitArray();
             load("m_bear.swf");
         }
         
-        public function buildUI():void {
+        public function colorChange(e:Event) {
+            var chooser:ColorChooser = e.currentTarget as ColorChooser;
+            var from:uint = uint(chooser.name);
+            var to:uint = uint(chooser.value);
             
-            var comp = new com.bit101.components.ColorChooser();
-            addChild(comp);
+            var changer = new PaletteChanger(bytes);
+            changer.loadPalette(paletteData);
+            changer.replace(from,to);
+            bytes = changer.apply();
+            this.loadCanvas(bytes);
+        }
+        
+        public function buildPaletteUI() {
+            colors = [];
+            for(var color in paletteData) {
+                colors.push(color);
+            }
+            colors.sort();
+            
+            for each(var color in colors) {
+                var cc:ColorChooser = new ColorChooser(colorList);
+                cc.usePopup = true;
+                cc.value = color;
+                cc.name = color + "";
+                cc.addEventListener(Event.CHANGE,colorChange);
+            }
+        }
+        
+        public function loadCanvas(bytes):void {
+            canvasLoader.loadBytes(bytes);
         }
 		
         public function load(url:String){ 
@@ -49,23 +86,12 @@ package
         public function handleSwfLoadComplete(e:Event) {
             var stream = e.currentTarget;
             stream.readBytes(bytes);
-            bytes = process(bytes);
-            var loader:Loader = new Loader();
-            stage.addChild(loader);
-            loader.loadBytes(bytes);
+            bytes = SwfUncompresser.uncompress(bytes) as BitArray;
+            paletteData = PaletteBuilder.build(bytes);
+            
+            this.buildPaletteUI();
+            this.loadCanvas(bytes);
         }
         
-        public function process(bytes:BitArray) {
-            
-            var palette = PaletteBuilder.build(bytes);
-            trace(palette);
-            var changer = new PaletteChanger(bytes);
-            changer.loadPalette(palette);
-            changer.replace(0xFFCF03,0x000000);
-            changer.replace(0x8E4A11,0xFF0000);
-            bytes = changer.apply();
-            
-            return bytes;
-        }
     }
 }

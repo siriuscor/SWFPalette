@@ -14,4 +14,4 @@ package com.talentwalker.palette.colouriser.fillstyle {
         }
 
     }
-}//package com.mindcandy.utils.colouriser.fillstyle 
+}

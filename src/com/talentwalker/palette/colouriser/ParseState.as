@@ -10,7 +10,6 @@ package com.talentwalker.palette.colouriser {
         private var extendedArray:Boolean;
         private var buildColouriserIndex:Boolean;
         private var defineShape:DefineObject;
-        private var colorScheme:ColourScheme;
         private var colouriserIndex:ColouriserIndex;
 
         public var palette = {};
@@ -54,15 +53,11 @@ package com.talentwalker.palette.colouriser {
         public function getDefineShape():DefineObject{
             return (defineShape);
         }
-        public function getColorScheme():ColourScheme{
-            return (colorScheme);
-        }
+
         public function setColouriserIndex(_arg1:ColouriserIndex):void{
             this.colouriserIndex = _arg1;
         }
-        public function setColorScheme(_arg1:ColourScheme):void{
-            this.colorScheme = _arg1;
-        }
+
         public function getAlpha():Boolean{
             return (alpha);
         }
@@ -74,4 +69,4 @@ package com.talentwalker.palette.colouriser {
         }
 
     }
-}//package com.mindcandy.utils.colouriser 
+}

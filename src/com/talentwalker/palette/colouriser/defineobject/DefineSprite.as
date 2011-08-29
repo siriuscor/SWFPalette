@@ -11,4 +11,4 @@ package com.talentwalker.palette.colouriser.defineobject {
         }
 
     }
-}//package com.mindcandy.utils.colouriser.defineobject 
+}
